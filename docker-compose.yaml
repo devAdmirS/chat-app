@@ -5,8 +5,8 @@ services:
     container_name: node-api
     ports:
       - "3001:3001"
-    depends_on:
-      - mongo
+    networks:
+      - chat-network
 
 
   client:
@@ -16,9 +16,9 @@ services:
       - "3000:3000"
     depends_on:
       - server
+    networks:
+      - chat-network
 
-  mongo:
-    image: mongo
-    container_name: mongodb
-    ports:
-      - "27017:27017"
+networks:
+  chat-network:
+    driver: bridge
