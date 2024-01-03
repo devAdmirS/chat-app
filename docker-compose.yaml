@@ -1,0 +1,24 @@
+version: '3'
+services:
+  server:
+    build: ./server
+    container_name: node-api
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mongo
+
+
+  client:
+    build: ./client
+    container_name: client
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+
+  mongo:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
