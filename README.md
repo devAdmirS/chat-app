@@ -9,7 +9,7 @@
    cd chat-app
    ```
 
-2. Copy the .env.example file:
+2. Navigate to server folder and copy the .env.example file:
    
     ```bash
     cp .env.example .env
