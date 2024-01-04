@@ -178,7 +178,7 @@ const Chat = ({ currentUser, selectedChatRoom, onLeaveChatRoom, socket, privateC
         </Grid>
         <Grid item xs={2}>
           <Button
-            style={{ height: '100%' }}
+            style={{ height: '100%', paddingLeft: 0 }}
             fullWidth
             variant="contained"
             color="primary"
