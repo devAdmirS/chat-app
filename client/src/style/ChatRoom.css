@@ -1,0 +1,9 @@
+.chatRoom-container {
+    margin-top: 20px;
+}
+
+@media (max-width: 800px) {
+    .chatRoom-title {
+        margin-top: 20px;
+    }
+}

@@ -2,9 +2,3 @@
     max-height: 150px;
     overflow: auto;
 }
-
-@media (max-width: 800px) {
-    .users {
-        max-height: 55px;
-    }
-}

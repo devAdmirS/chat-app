@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { handleRequest } from '../services/ChatService';
 import { Container, TextField, Button, Typography, Grid, List, ListItem, ListItemText } from '@mui/material';
+import './../style/ChatRoom.css';
 
 
 const ChatRoom = ({ currentUser, joinChatRoom }) => {
@@ -43,7 +44,7 @@ const ChatRoom = ({ currentUser, joinChatRoom }) => {
   };
 
   return (
-    <Container maxWidth="md" style={{marginTop: 20}}>
+    <Container maxWidth="md" className='chatRoom-container'>
       <div>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
@@ -74,7 +75,7 @@ const ChatRoom = ({ currentUser, joinChatRoom }) => {
 
         </Grid>
 
-        <Typography variant="h4">Chat Rooms</Typography>
+        <Typography variant="h4" className='chatRoom-title'>Chat Rooms</Typography>
         <List>
           {filteredChatRooms.map((chatRoom, index) => (
             <ListItem
