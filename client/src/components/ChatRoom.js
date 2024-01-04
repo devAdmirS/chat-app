@@ -43,7 +43,7 @@ const ChatRoom = ({ currentUser, joinChatRoom }) => {
   };
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" style={{marginTop: 20}}>
       <div>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>

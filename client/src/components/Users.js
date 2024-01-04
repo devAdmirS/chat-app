@@ -1,9 +1,10 @@
 import React from 'react';
 import { Avatar, List, ListItem, ListItemAvatar, ListItemText, Button, Grid } from '@mui/material';
+import './../style/Users.css';
 
 const Users = ({ currentUserId, users, onlineUsers, joinChatRoom = null, privateChat = false }) => {
     return (
-        <List>
+        <List className='users'>
             {users.map((user, index) => {
                 if (user.userId === currentUserId) {
                     return null;

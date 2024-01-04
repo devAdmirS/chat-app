@@ -8,6 +8,7 @@ import {
 } from '../services/ChatService';
 import Users from './Users';
 import Message from './Message';
+import './../style/Chat.css'
 
 const Chat = ({ currentUser, selectedChatRoom, onLeaveChatRoom, socket, privateChat = false }) => {
   const [chatData, setChatData] = useState({
@@ -161,7 +162,7 @@ const Chat = ({ currentUser, selectedChatRoom, onLeaveChatRoom, socket, privateC
   };
 
   return (
-    <div style={{ padding: 16, display: 'flex', flexDirection: 'column', height: 'calc(100vh - 112px)' }}>
+    <div className='chat'>
       <Message messages={chatData.messages} currentUser={currentUser} messagesContainerRef={messagesContainerRef} />
       <Users currentUserId={currentUser.userId} users={chatData.chatRoomUsers} onlineUsers={chatData.onlineChatRoomUsers} />
       <Grid container spacing={2} style={{ marginTop: '16px' }}>

@@ -76,6 +76,7 @@ const Login = () => {
                         required
                         value={username}
                         onChange={handleUsernameChange}
+                        style={{ marginBottom: 8}}
                     />
                     <TextField
                         label='Password'
@@ -85,6 +86,7 @@ const Login = () => {
                         required
                         value={password}
                         onChange={handlePasswordChange}
+                        style={{ marginBottom: 8}}
                     />
                     <Button type='submit' color='primary' variant='contained' style={btnstyle} fullWidth>
                         Sign in

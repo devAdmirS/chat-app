@@ -58,7 +58,7 @@ const Register = () => {
             <form onSubmit={handleFormSubmit}>
                     <Grid align='center'>
                         <Avatar style={avatarStyle}><Person /></Avatar>
-                        <h2>Register</h2>
+                        <h2>Sign up</h2>
                     </Grid>
                     <TextField
                         label='Username'
@@ -67,6 +67,7 @@ const Register = () => {
                         required
                         value={registrationUsername}
                         onChange={handleUsernameChange}
+                        style={{ marginBottom: 8}}
                     />
                     <TextField
                         label='Password'
@@ -76,6 +77,7 @@ const Register = () => {
                         required
                         value={registrationPassword}
                         onChange={handlePasswordChange}
+                        style={{ marginBottom: 8}}
                     />
                     <Button type='submit' color='primary' variant='contained' style={btnstyle} fullWidth>
                         Register

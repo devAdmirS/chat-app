@@ -5,7 +5,7 @@
     align-items: center;
     border-radius: 15px;
     padding: 15px;
-    margin: 7px 5px; 
+    margin: 7px 5px;
     font-size: 20px;
 }
 
@@ -21,12 +21,24 @@
     background-color: rgb(217 255 227);
 }
 
+
+
 @media (max-width: 800px) {
     .sender {
         margin-right: 25px;
     }
 
+    .chat-messages {
+        max-height: 650px;
+        min-height: 650px;
+    }
+
     .receiver {
         margin-left: 25px;
+    }
+
+    .sender,
+    .receiver {
+        font-size: 16px;
     }
 }
