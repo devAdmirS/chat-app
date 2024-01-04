@@ -52,9 +52,14 @@ io.on('connection', (socket) => {
   });
 
   socket.on('joinRoom', (data) => {
-    const { receiver } = data;
+    const { receiver, sender } = data;
   
-    socket.join(receiver);
+    if(data.receiverType === 'User') {
+      socket.join(receiver + sender._id);
+      socket.join(sender._id + receiver);
+    } else {
+      socket.join(receiver);
+    }
     console.log(`User ${data.sender._id} joined room: ${receiver}`);
   
     if (!roomUsers.has(receiver)) {
@@ -95,9 +100,10 @@ io.on('connection', (socket) => {
 
   socket.on('sendMessage', (data) => {
     console.log('Sent message', data);
-    io.to(data.receiver).emit("getMessage", data);
     if(data.receiverType === 'User') {
-      io.to(data.sender._id).emit("getMessage", data);
+      io.to(data.receiver + data.sender._id).emit("getMessage", data);
+    } else {
+      io.to(data.receiver).emit("getMessage", data);
     }
   })
 
@@ -112,5 +118,4 @@ io.on('connection', (socket) => {
 
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-  console.log(`Mongo db ${process.env.MONGODB_URI}`);
 });

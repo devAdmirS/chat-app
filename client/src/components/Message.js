@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {Paper, Button} from '@mui/material';
 import Avatar from '@mui/material/Avatar';
+import './../style/Message.css';
 
 
 const Message = ({ messages, currentUser, messagesContainerRef }) => {
@@ -22,19 +23,7 @@ const Message = ({ messages, currentUser, messagesContainerRef }) => {
       {messages.slice(-visibleMessages).map((message, index) => (
         <div
           key={index}
-          style={{
-            marginBottom: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            backgroundColor: message.sender._id === currentUser.userId ? '#e0f7fa' : 'rgb(217 255 227)',
-            borderRadius: '15px',
-            padding: '15px',
-            margin: '7px 5px',
-            fontSize: '20px',
-            justifyContent: message.sender._id === currentUser.userId ? 'start' : 'normal',
-            marginLeft: message.sender._id === currentUser.userId ? '5px' : '52.5%',
-            marginRight: message.sender._id === currentUser.userId ? '52.5%' : '5px',
-          }}
+          className={message.sender._id === currentUser.userId ? 'sender' : 'receiver'}
         >
           {message.notification ? (
             <div style={{ color: message.notification === 'join' ? 'green' : 'red' }}>

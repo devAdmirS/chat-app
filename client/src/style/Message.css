@@ -1,0 +1,32 @@
+.sender,
+.receiver {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 7px 5px; 
+    font-size: 20px;
+}
+
+.sender {
+    justify-content: start;
+    margin-right: 52.5%;
+    background-color: #e0f7fa;
+}
+
+.receiver {
+    justify-content: normal;
+    margin-left: 52.5%;
+    background-color: rgb(217 255 227);
+}
+
+@media (max-width: 800px) {
+    .sender {
+        margin-right: 25px;
+    }
+
+    .receiver {
+        margin-left: 25px;
+    }
+}

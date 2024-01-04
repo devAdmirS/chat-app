@@ -39,6 +39,7 @@ const Chat = ({ currentUser, selectedChatRoom, onLeaveChatRoom, socket, privateC
             content: 'Joined',
             receiver: privateChat ? selectedChatRoom : selectedChatRoom._id,
             notification: 'join',
+            receiverType: privateChat ? 'User' : 'ChatRoom'
           };
 
           socket.current.emit('joinRoom', data);
