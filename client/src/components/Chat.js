@@ -176,9 +176,9 @@ const Chat = ({ currentUser, selectedChatRoom, onLeaveChatRoom, socket, privateC
             onKeyDown={handleKeyPress}
           />
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={2} style={{ paddingLeft: 0 }}>
           <Button
-            style={{ height: '100%', paddingLeft: 0 }}
+            style={{ height: '100%' }}
             fullWidth
             variant="contained"
             color="primary"
